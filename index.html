@@ -2,15 +2,16 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>PokeDex</title>
+  <title>PokeDéx</title>
   <link rel="stylesheet" href="./assets/css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet" />
 </head>
 <body>
 
   <div class="container">
     <h1>Pokedéx</h1>
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Pesquisar por Pokémon...">
+    <input type="text" id="filterTxt" onkeyup="filterPokemon()" placeholder="Pesquisar por Pokémon...">
     <ul data-js="pokedex" class="pokedex"></ul>
   </div>
   

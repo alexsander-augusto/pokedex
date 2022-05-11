@@ -5,6 +5,17 @@ body {
 	margin: 0;
 	font-family: rubik;
 }
+body::-webkit-scrollbar {
+    border-radius: 50%;
+}
+body::-webkit-scrollbar-thumb {
+    background: #CCC;
+    border-radius: 0.6rem;
+}
+body::-webkit-scrollbar {
+    width: 1rem;
+    border-radius: 50%;
+}
 .container {
 	padding: 40px;
 	margin: 0 auto;
@@ -17,8 +28,8 @@ h1 {
 	text-align: center;
 	font-size: 54px;
 }
-#myInput {
-	width: 400px;
+#filterTxt {
+	width: 300px;
 	font-size: 16px;
 	padding: 12px 20px 12px 40px;
 	border: 1px solid #ddd;
@@ -27,10 +38,6 @@ h1 {
 	outline: 0;
 }
 .pokedex {
-	/* display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(320px, 320px));
-	grid-gap: 20px;
-	padding-inline-start: 0; */
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
@@ -39,12 +46,21 @@ h1 {
 }
 .card {
 	list-style: none;
-	padding: 40px;
+	padding: 20px;
 	color: #222;
 	text-align: center;
 	border-radius: 20px;
 	position: relative;
 	width: 300px;
+}
+.card h3 {
+	color: #919191;
+	font-size: 90%;
+	margin: 0;
+	margin-top: 5px;
+}
+.card h2 {
+	margin-top: 0;
 }
 .card::after {
 	content: "";
@@ -192,7 +208,7 @@ h1 {
 .card-title {
 	text-transform: capitalize;
 	margin-bottom: 0px;
-	font-size: 32px;
+	font-size: 28px;
 	font-weight: normal;
 	position: relative;
 	z-index: 2;
@@ -240,8 +256,11 @@ h1 {
 	}
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 400px) {
 	.card {
-		width: 400px;
+		width: 200px;
+	}
+	#filterTxt {
+		width: 200px;
 	}
 }
