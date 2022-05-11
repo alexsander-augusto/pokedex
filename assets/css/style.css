@@ -1,21 +1,39 @@
 body {
 	background: #EFEFBB;
 	background: linear-gradient(to right, rgb(197, 230, 236), rgb(239, 187, 230));
-	color: white;
+	color: #fff;
 	margin: 0;
 	font-family: rubik;
 }
 .container {
 	padding: 40px;
 	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 h1 {
 	text-align: center;
 	font-size: 54px;
 }
+#myInput {
+	width: 400px;
+	font-size: 16px;
+	padding: 12px 20px 12px 40px;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	margin-bottom: 12px;
+	outline: 0;
+}
 .pokedex {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	/* display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 320px));
+	grid-gap: 20px;
+	padding-inline-start: 0; */
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
 	grid-gap: 20px;
 	padding-inline-start: 0;
 }
@@ -26,6 +44,7 @@ h1 {
 	text-align: center;
 	border-radius: 20px;
 	position: relative;
+	width: 300px;
 }
 .card::after {
 	content: "";
@@ -40,49 +59,132 @@ h1 {
 	left: 25%;
 }
 .steel {
-	background-color: #f4f4f4;
+	background-color: #9eb7b8;
+}
+.card-subtitle-text.steel {
+	background: linear-gradient(180deg, #9eb7b8 50%, #9eb7b8 50%);
+	border-radius: 5px;
 }
 .fire {
-	background-color: #FDDFDF;
+	background-color: #ffc8a0;
+}
+.card-subtitle-text.fire {
+	background: linear-gradient(180deg, #fd7d24 50%, #fd7d24 50%);
+	color: #fff;
+	border-radius: 5px;
 }
 .grass {
-	background-color: #DEFDE0;
+	background-color: #c7faca;
+}
+.card-subtitle-text.grass {
+	background: linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+	border-radius: 5px;
 }
 .electric {
-	background-color: #FCF7DE;
+	background-color: #fff0a6;
 }
-.water, .ice {
+.card-subtitle-text.electric {
+	background: linear-gradient(180deg, #eed535 50%, #eed535 50%);
+	border-radius: 5px;
+}
+.water {
+	background-color: #a7e2ff;
+}
+.card-subtitle-text.water {
+	background: linear-gradient(180deg, #4592c4 50%, #4592c4 50%);
+	color: #fff;
+	border-radius: 5px;
+}
+.ice {
 	background-color: #DEF3FD;
+}
+.card-subtitle-text.ice {
+	background: linear-gradient(180deg, #51c4e7 50%, #51c4e7 50%);
+	border-radius: 5px;
 }
 .ground {
 	background-color: #f4e7da;
 }
+.card-subtitle-text.ground {
+	background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
+	border-radius: 5px;
+}
+.ghost {
+	background-color: #8d79ad;
+}
+.card-subtitle-text.ghost {
+	background: linear-gradient(180deg, #7b62a3 50%, #7b62a3 50%);
+	color: #fff;
+	border-radius: 5px;
+}
 .rock {
-	background-color: #d5d5d4;
+	background-color: #c4b780;
+}
+.card-subtitle-text.rock {
+	background: linear-gradient(180deg, #a38c21 50%, #a38c21 50%);
+	color: #fff;
+	border-radius: 5px;
 }
 .fairy {
 	background-color: #fceaff;
 }
+.card-subtitle-text.fairy {
+	background: linear-gradient(180deg, #fdb9e9 50%, #fdb9e9 50%);
+	border-radius: 5px;
+}
 .poison {
-	background-color: #98d7a5;
+	background-color: #d38ee6;
+}
+.card-subtitle-text.poison {
+	background: linear-gradient(180deg, #b97fc9 50%, #b97fc9 50%);
+	color: #fff;
+	border-radius: 5px;
 }
 .bug {
-	background-color: #f8d5a3;
+	background-color: #98d7a5;
+}
+.card-subtitle-text.bug {
+	background: linear-gradient(180deg, #729f3f 50%, #729f3f 50%);
+	color: #fff;
+	border-radius: 5px;
 }
 .dragon {
-	background-color: #97b3e6;
+	background-color: #9db9ee;
+}
+.card-subtitle-text.dragon {
+	background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+	color: #fff;
+	border-radius: 5px;
 }
 .psychic {
-	background-color: #eaeda1;
+	background-color: #ffaedd;
+}
+.card-subtitle-text.psychic {
+	background: linear-gradient(180deg, #f366b9 50%, #f366b9 50%);
+	color: #fff;
+	border-radius: 5px;
 }
 .flying {
 	background-color: #F5F5F5;
 }
+.card-subtitle-text.flying {
+	background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+	border-radius: 5px;
+}
 .fighting {
-	background-color: #E6E0D4;
+	background-color: #e5b393;
+}
+.card-subtitle-text.fighting {
+	background: linear-gradient(180deg, #d56723 50%, #d56723 50%);
+	color: #fff;
+	border-radius: 5px;
 }
 .normal {
 	background-color: #F5F5F5;
+}
+.card-subtitle-text.normal {
+	background: linear-gradient(180deg, #a4acaf 50%, #a4acaf 50%);
+	border-radius: 5px;
 }
 .card:hover {
 	animation: bounce 0.5s linear;
@@ -96,11 +198,26 @@ h1 {
 	z-index: 2;
 }
 .card-subtitle {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	gap: 5px;
+}
+.card-subtitle p {
+	width: 100px;
+	height: 22px;	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.card-subtitle-text {
 	margin-top: 5px;
-	color: #666;
+	color: #000;
 	font-weight: lighter;
 	position: relative;
 	z-index: 2;
+	text-transform: capitalize;
 }
 .card-image {
 	height: 180px;
@@ -120,5 +237,11 @@ h1 {
 	}
 	100% {
 			transform: translateY(0);
+	}
+}
+
+@media (max-width: 1000px) {
+	.card {
+		width: 400px;
 	}
 }
