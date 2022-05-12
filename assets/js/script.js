@@ -36,6 +36,7 @@ Promise.all(pokemonPromises)
     .then(generateHTML)
     .then(insertPokemonsIntoPage)
 
+// Função do filtro de pesquisas;
 function filterPokemon() {
     var input, filter, ul, li, h2, txtValue;
     input = document.getElementById('filterTxt');
@@ -53,3 +54,71 @@ function filterPokemon() {
         }
     }
 };
+
+// Atualizar a página;
+document.querySelectorAll('.reload').forEach((item) => {
+    item.addEventListener('click', () => {
+        location.reload();
+    })
+})
+
+// let body = document.querySelector('body');
+// let toggleTheme = document.querySelector('.toggleTheme');
+// let headerH1 = document.querySelector('.header h1');
+// let iconLogoImg1 = document.querySelector('.icon-logo img:nth-child(1)');
+// let iconLogoImg2 = document.querySelector('.icon-logo img:nth-child(2)');
+// let toggleThemeSvg1 = document.querySelector('.toggleTheme svg:nth-child(1)');
+// let toggleThemeSvg2 = document.querySelector('.toggleTheme svg:nth-child(2)');
+
+
+// document.querySelector('.toggleTheme').addEventListener('click', (e) => {
+//     console.log(toggleThemeSvg1.style.display);
+//         body.style.backgroundColor = '#0f0f0f';
+//         toggleTheme.classList.add('active');
+//         headerH1.style.color = '#fff';
+//         iconLogoImg1.style.display = 'none';
+//         iconLogoImg2.style.display = 'inline';
+//         toggleThemeSvg1.style.display = 'none';  
+//         toggleThemeSvg2.style.display = 'inline';
+    
+// });
+
+const html = document.querySelector('html')
+const checkbox = document.querySelector('input[name="theme"]')
+
+const getStyle = (element, style) => 
+    window
+        .getComputedStyle(element)
+        .getPropertyValue(style)
+
+const initialColors = {
+    bg: getStyle(html, "--bg"),
+    h1: getStyle(html, "--h1"),
+    colorHeadings: getStyle(html, "--color-headings")
+}
+
+const darkMode = {
+    bg: "#111111",
+    h1: "#FFFFFF",
+    colorHeadings: "#666666"
+}
+
+const transformKey = key => 
+    "--" + key.replace(/([A-Z])/, "-$1").toLowerCase()
+
+const changeColors = (colors) => {
+    Object.keys(colors).map(key => 
+        html.style.setProperty(transformKey(key), colors[key]) 
+    )
+}
+
+checkbox.addEventListener("change", ({target}) => {
+    target.checked ? changeColors(darkMode) : changeColors(initialColors)
+    if(target.checked == true) {
+        document.querySelector('.icon-logo img:nth-child(1)').style.display = 'none';
+        document.querySelector('.icon-logo img:nth-child(2)').style.display = 'inline';
+    } else {
+        document.querySelector('.icon-logo img:nth-child(1)').style.display = 'inline';
+        document.querySelector('.icon-logo img:nth-child(2)').style.display = 'none';
+    }
+})

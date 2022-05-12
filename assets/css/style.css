@@ -1,16 +1,25 @@
+html {
+	--bg: #FFFFFF;
+	--h1: #000000;
+	--color-headings: #333333;
+}
+
 body {
-	background-color: #fff;
+	background-color: var(--bg);
 	color: #fff;
-	font-family: rubik;	
+	font-family: rubik;
 	max-width: 1110px;
 	margin: 0 auto;
 }
+
 body::-webkit-scrollbar {
 	width: 0.7rem;
 }
+
 body::-webkit-scrollbar-thumb {
-    background: #CCC;
+	background: #CCC;
 }
+
 .header {
 	height: 100px;
 	max-width: ;
@@ -21,33 +30,40 @@ body::-webkit-scrollbar-thumb {
 	margin-top: 30px;
 	position: relative;
 }
+
 .header-logo {
 	display: flex;
 	position: relative;
+	cursor: pointer;
 }
+
 .header-logo:hover {
 	animation: bounce 0.5s linear;
 }
+
 .imgPokedex {
 	justify-content: center;
-    position: absolute;
-    top: -25px;
-    left: 100px;
-    border-radius: 2rem;
-    min-width: 1.3rem;
-    width: fit-content;
-    padding: 0.4rem;
-    height: 1.3rem;
+	position: absolute;
+	top: -25px;
+	left: 100px;
+	border-radius: 2rem;
+	min-width: 1.3rem;
+	width: fit-content;
+	padding: 0.4rem;
+	height: 1.3rem;
 }
+
 .imgPokedex img {
 	height: 70px;
 }
+
 .header h1 {
 	text-align: center;
 	font-size: 44px;
 	margin: 0;
-	color: #000;
+	color: var(--h1);
 }
+
 .header-nav {
 	height: 70px;
 	display: flex;
@@ -55,59 +71,92 @@ body::-webkit-scrollbar-thumb {
 	max-width: 1030px;
 	margin: 0 auto;
 }
+
 .icon-logo {
-	flex-grow: 1;	
+	flex-grow: 1;
 	position: relative;
 	width: 50px;
 	height: 50px;
 }
+
 .icon-logo img {
 	cursor: pointer;
 }
+
 .icon-logo img:hover {
-	animation: bounce 0.5s linear;	
+	animation: bounce 0.5s linear;
 }
-.icon-logo img:nth-child(2){
+
+.icon-logo img:nth-child(2) {
 	display: none;
 }
+
 .divFilterTxt {
 	position: relative;
 }
+
 .divFilterTxt svg {
 	fill: #808080;
-    top: 11px;
-    bottom: 0;
-    position: absolute;
-    left: 12px;
+	top: 11px;
+	bottom: 0;
+	position: absolute;
+	left: 12px;
 }
+
 #filterTxt {
-    border-radius: 8px;
-    background: #fff;
-    border: none;
-    height: 25px;
-    font-size: 16px;
-    color: #000;
-    padding: 8px 16px 8px 42px;
+	border-radius: 8px;
+	background: #fff;
+	border: none;
+	height: 25px;
+	font-size: 16px;
+	color: #000;
+	padding: 8px 16px 8px 42px;
 	border: 1px solid #ccc;
 	outline: 0;
 }
-.themeModeContainer {
-    padding: 16px;
-    display: inline-flex;
-    margin-right: -16px;
+
+input[type=checkbox] {
+	height: 0;
+	width: 0;
+	visibility: hidden;
 }
-.themeModeContainer:hover {
-	animation: bounce 0.5s linear;	
+
+label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 52px;
+	height: 27px;
+	background: var(--color-headings);
+	float: right;
+	border-radius: 100px;
+	position: relative;
 }
-.toggleTheme {
-	align-items: center;
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    padding: 0;
-    color: #000;
+
+label::after {
+	content: '';
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 20px;
+	height: 20px;
+	background-color: white;
+	border-radius: 90px;
+	transition: 0.3s;
 }
+
+input:checked+label {
+	background-color: var(--color-headings);
+}
+
+input:checked+label::after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+label:active:after {
+	width: 45px;
+}
+
 .container {
 	margin: 0px 40px;
 	display: flex;
@@ -115,6 +164,7 @@ body::-webkit-scrollbar-thumb {
 	align-items: center;
 	justify-content: center;
 }
+
 #logo {
 	width: 500px;
 	margin-bottom: 20px;
@@ -127,6 +177,7 @@ body::-webkit-scrollbar-thumb {
 	grid-gap: 20px;
 	padding-inline-start: 0;
 }
+
 .card {
 	list-style: none;
 	padding: 5px 20px;
@@ -137,15 +188,18 @@ body::-webkit-scrollbar-thumb {
 	width: 200px;
 	cursor: pointer;
 }
+
 .card h3 {
 	color: #919191;
 	font-size: 90%;
 	margin: 0;
 	margin-top: 5px;
 }
+
 .card h2 {
 	margin-top: 0;
 }
+
 .card::after {
 	content: "";
 	display: block;
@@ -158,137 +212,173 @@ body::-webkit-scrollbar-thumb {
 	top: 15%;
 	left: 25%;
 }
+
 .steel {
 	background-color: #9eb7b8;
 }
+
 .card-subtitle-text.steel {
 	background: linear-gradient(180deg, #9eb7b8 50%, #9eb7b8 50%);
 	border-radius: 5px;
 }
+
 .fire {
 	background-color: #ffc8a0;
 }
+
 .card-subtitle-text.fire {
 	background: linear-gradient(180deg, #fd7d24 50%, #fd7d24 50%);
 	color: #fff;
 	border-radius: 5px;
 }
+
 .grass {
 	background-color: #c7faca;
 }
+
 .card-subtitle-text.grass {
 	background: linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
 	border-radius: 5px;
 }
+
 .electric {
 	background-color: #fff0a6;
 }
+
 .card-subtitle-text.electric {
 	background: linear-gradient(180deg, #eed535 50%, #eed535 50%);
 	border-radius: 5px;
 }
+
 .water {
 	background-color: #a7e2ff;
 }
+
 .card-subtitle-text.water {
 	background: linear-gradient(180deg, #4592c4 50%, #4592c4 50%);
 	color: #fff;
 	border-radius: 5px;
 }
+
 .ice {
 	background-color: #DEF3FD;
 }
+
 .card-subtitle-text.ice {
 	background: linear-gradient(180deg, #51c4e7 50%, #51c4e7 50%);
 	border-radius: 5px;
 }
+
 .ground {
 	background-color: #f8e2cb;
 }
+
 .card-subtitle-text.ground {
 	background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
 	border-radius: 5px;
 }
+
 .ghost {
 	background-color: #8d79ad;
 }
+
 .card-subtitle-text.ghost {
 	background: linear-gradient(180deg, #7b62a3 50%, #7b62a3 50%);
 	color: #fff;
 	border-radius: 5px;
 }
+
 .rock {
 	background-color: #c4b780;
 }
+
 .card-subtitle-text.rock {
 	background: linear-gradient(180deg, #a38c21 50%, #a38c21 50%);
 	color: #fff;
 	border-radius: 5px;
 }
+
 .fairy {
 	background-color: #fceaff;
 }
+
 .card-subtitle-text.fairy {
 	background: linear-gradient(180deg, #fdb9e9 50%, #fdb9e9 50%);
 	border-radius: 5px;
 }
+
 .poison {
 	background-color: #d38ee6;
 }
+
 .card-subtitle-text.poison {
 	background: linear-gradient(180deg, #b97fc9 50%, #b97fc9 50%);
 	color: #fff;
 	border-radius: 5px;
 }
+
 .bug {
 	background-color: #98d7a5;
 }
+
 .card-subtitle-text.bug {
 	background: linear-gradient(180deg, #729f3f 50%, #729f3f 50%);
 	color: #fff;
 	border-radius: 5px;
 }
+
 .dragon {
 	background-color: #9db9ee;
 }
+
 .card-subtitle-text.dragon {
 	background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
 	color: #fff;
 	border-radius: 5px;
 }
+
 .psychic {
 	background-color: #ffaedd;
 }
+
 .card-subtitle-text.psychic {
 	background: linear-gradient(180deg, #f366b9 50%, #f366b9 50%);
 	color: #fff;
 	border-radius: 5px;
 }
+
 .flying {
 	background-color: #F5F5F5;
 }
+
 .card-subtitle-text.flying {
 	background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
 	border-radius: 5px;
 }
+
 .fighting {
 	background-color: #e5b393;
 }
+
 .card-subtitle-text.fighting {
 	background: linear-gradient(180deg, #d56723 50%, #d56723 50%);
 	color: #fff;
 	border-radius: 5px;
 }
+
 .normal {
 	background-color: #d1d1d1;
 }
+
 .card-subtitle-text.normal {
 	background: linear-gradient(180deg, #a4acaf 50%, #a4acaf 50%);
 	border-radius: 5px;
 }
+
 .card:hover {
 	animation: bounce 0.5s linear;
 }
+
 .card-title {
 	text-transform: capitalize;
 	margin-bottom: 0px;
@@ -297,6 +387,7 @@ body::-webkit-scrollbar-thumb {
 	position: relative;
 	z-index: 2;
 }
+
 .card-subtitle {
 	display: flex;
 	justify-content: center;
@@ -304,13 +395,15 @@ body::-webkit-scrollbar-thumb {
 	text-align: center;
 	gap: 5px;
 }
+
 .card-subtitle p {
 	width: 100px;
-	height: 22px;	
+	height: 22px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
+
 .card-subtitle-text {
 	margin-top: 5px;
 	color: #000;
@@ -319,6 +412,7 @@ body::-webkit-scrollbar-thumb {
 	z-index: 2;
 	text-transform: capitalize;
 }
+
 .card-image {
 	height: 180px;
 	position: relative;
@@ -327,16 +421,19 @@ body::-webkit-scrollbar-thumb {
 
 @keyframes bounce {
 	20% {
-			transform: translateY(-6px);
+		transform: translateY(-6px);
 	}
+
 	40% {
-			transform: translateY(0px);
+		transform: translateY(0px);
 	}
+
 	80% {
-			transform: translateY(-2px);
+		transform: translateY(-2px);
 	}
+
 	100% {
-			transform: translateY(0);
+		transform: translateY(0);
 	}
 }
 
@@ -350,12 +447,15 @@ body::-webkit-scrollbar-thumb {
 	.header-nav {
 		max-width: 500px;
 	}
+
 	.icon-logo {
 		flex-grow: 1;
 	}
+
 	#filterTxt {
 		width: auto;
-	}	
+	}
+
 	.themeModeContainer {
 		padding-left: 6px;
 	}
@@ -366,9 +466,11 @@ body::-webkit-scrollbar-thumb {
 		max-width: 270px;
 		padding: 0px 25px;
 	}
+
 	.card {
 		width: 220px;
 	}
+
 	#filterTxt {
 		width: 100px;
 	}
