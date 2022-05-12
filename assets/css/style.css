@@ -499,6 +499,9 @@ label:active:after {
 		margin-right: 20px;
 	}
 	.card {
-		width: 210px;
+		width: 300px;
+	}
+	.pokedex {
+		margin-top: 10px;
 	}
 }
