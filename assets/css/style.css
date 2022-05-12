@@ -1,3 +1,9 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
 html {
 	--bg: #FFFFFF;
 	--h1: #000000;
@@ -22,13 +28,18 @@ body::-webkit-scrollbar-thumb {
 
 .header {
 	height: 100px;
-	max-width: ;
+	max-width: 1110px;
 	margin: auto;
+	margin-bottom: -20px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	margin-top: 30px;
 	position: relative;
+}
+
+.header-nav {
+	max-width: 1110px;
 }
 
 .header-logo {
@@ -93,24 +104,25 @@ body::-webkit-scrollbar-thumb {
 
 .divFilterTxt {
 	position: relative;
+	padding: 0px 10px;
 }
 
 .divFilterTxt svg {
 	fill: #808080;
-	top: 11px;
+	top: 3px;
 	bottom: 0;
 	position: absolute;
-	left: 12px;
+	left: 18px;
 }
 
 #filterTxt {
 	border-radius: 8px;
 	background: #fff;
 	border: none;
-	height: 25px;
+	height: 27px;
 	font-size: 16px;
 	color: #000;
-	padding: 8px 16px 8px 42px;
+	padding: 8px 16px 8px 32px;
 	border: 1px solid #ccc;
 	outline: 0;
 }
@@ -180,12 +192,12 @@ label:active:after {
 
 .card {
 	list-style: none;
-	padding: 5px 20px;
+	padding: 20px;
 	color: #222;
 	text-align: center;
 	border-radius: 20px;
 	position: relative;
-	width: 200px;
+	width: 242px;
 	cursor: pointer;
 }
 
@@ -247,6 +259,16 @@ label:active:after {
 
 .card-subtitle-text.electric {
 	background: linear-gradient(180deg, #eed535 50%, #eed535 50%);
+	border-radius: 5px;
+}
+
+.dark {
+	background-color: #8a8a8a;
+}
+
+.card-subtitle-text.dark {
+	background: linear-gradient(180deg, #707070 50%, #707070 50%);
+	color: #fff;
 	border-radius: 5px;
 }
 
@@ -348,7 +370,7 @@ label:active:after {
 }
 
 .flying {
-	background-color: #F5F5F5;
+	background-color: #b9a6f3;
 }
 
 .card-subtitle-text.flying {
@@ -452,8 +474,12 @@ label:active:after {
 		flex-grow: 1;
 	}
 
+	.divFilterTxt {
+		width: 100%;
+	}
+
 	#filterTxt {
-		width: auto;
+		width: inherit;
 	}
 
 	.themeModeContainer {
@@ -461,17 +487,18 @@ label:active:after {
 	}
 }
 
-@media (max-width: 579px) {
-	.header-nav {
-		max-width: 270px;
-		padding: 0px 25px;
-	}
-
+@media (max-width: 583px) {
 	.card {
-		width: 220px;
+		width: 210px;
 	}
+}
 
-	#filterTxt {
-		width: 100px;
+@media (max-width: 520px) {
+	.header-nav {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+	.card {
+		width: 210px;
 	}
 }
