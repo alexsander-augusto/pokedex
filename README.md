@@ -1,3 +1,3 @@
 # pokedex
 
-- Live Site URL: [Pokédex](https://shootowned.github.io/pokedex/)
+- Live Site URL: [Pokédex](https://alexsander-augusto.github.io/pokedex/)
